@@ -1,0 +1,16 @@
+{
+  "name": "master-elevadores",
+  "version": "1.0.0",
+  "description": "Landing page MASTER ELEVADORES - Brasília-DF",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["elevadores", "brasilia", "landing-page"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
