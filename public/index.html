@@ -135,17 +135,78 @@
               </span>
             </div>
           </div>
-          <form class="contact-form" action="/api/contato" method="post">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-            <label for="telefone">Telefone / WhatsApp</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(61) 99999-9999">
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Conte-nos sobre seu projeto ou necessidade..." required></textarea>
-            <div class="form-feedback" role="status"></div>
-            <button type="submit" class="btn" style="width: 100%;">Enviar mensagem</button>
+          <form class="contact-form" action="/api/contato" method="post" novalidate>
+            <div class="form-field">
+              <div class="floating-label">
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  autocomplete="name"
+                  required
+                >
+                <label for="nome">Nome completo</label>
+              </div>
+              <p class="field-error" data-error-for="nome"></p>
+            </div>
+
+            <div class="form-field">
+              <div class="floating-label">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                >
+                <label for="email">E-mail</label>
+              </div>
+              <p class="field-error" data-error-for="email"></p>
+            </div>
+
+            <div class="form-field">
+              <div class="floating-label">
+                <input
+                  type="tel"
+                  id="telefone"
+                  name="telefone"
+                  inputmode="tel"
+                  autocomplete="tel"
+                >
+                <label for="telefone">Telefone / WhatsApp</label>
+              </div>
+              <p class="field-help">Sugestão: use o DDD da sua região para entrar em contato conosco.</p>
+              <p class="field-error" data-error-for="telefone"></p>
+            </div>
+
+            <div class="form-field">
+              <div class="floating-label floating-label-textarea">
+                <textarea
+                  id="mensagem"
+                  name="mensagem"
+                  rows="4"
+                  maxlength="600"
+                  required
+                ></textarea>
+                <label for="mensagem">Conte-nos sobre seu projeto</label>
+              </div>
+
+              <div class="message-meta">
+                <div class="message-templates" aria-label="Sugestões rápidas de mensagem">
+                  <button type="button" class="chip" data-template="Preciso de manutenção preventiva para o elevador do meu condomínio.">Manutenção preventiva</button>
+                  <button type="button" class="chip" data-template="Tive um problema no elevador e preciso de atendimento emergencial.">Atendimento emergencial</button>
+                  <button type="button" class="chip" data-template="Quero um orçamento para instalação de elevador em prédio residencial.">Instalação / orçamento</button>
+                </div>
+                <span class="char-counter" data-counter-for="mensagem">0 / 600</span>
+              </div>
+
+              <p class="field-error" data-error-for="mensagem"></p>
+            </div>
+
+            <div class="form-feedback" role="status" aria-live="polite"></div>
+            <p class="privacy-note">Seus dados são usados apenas para retorno de contato e <strong>não são armazenados permanentemente</strong>.</p>
+
+            <button type="submit" class="btn btn-submit">Enviar mensagem</button>
           </form>
         </div>
       </div>
@@ -159,6 +220,14 @@
       <p>Copyright © 2026 Inovat Master Elevadores Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <a
+    href="#contato"
+    class="whatsapp-fab"
+    aria-label="Falar no WhatsApp"
+  >
+    💬
+  </a>
 
   <script src="/js/main.js"></script>
 </body>
